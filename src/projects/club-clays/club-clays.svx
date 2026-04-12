@@ -1,0 +1,53 @@
+---
+title: Club Clays
+date: '2021'
+categories:
+  - Android
+  - C-Sharp
+published: true
+---
+
+<script lang="ts">
+  import * as Carousel from '$lib/components/ui/carousel/index';
+  import { Lightbox } from 'svelte-lightbox';
+
+  const images = [
+    '../assets/projects/club-clays/simple.png',
+    '../assets/projects/club-clays/reviewshare.png',
+  ];
+
+</script>
+
+<div class="flex justify-center w-full pb-5">
+  <Carousel.Root class="w-[85%]"
+      opts={{
+          align: "start",
+          loop: true,
+        }}>
+    <Carousel.Content>
+      {#each images as image, i (i)}
+        <Carousel.Item class="basis-1/2">
+            <Lightbox><img src={image} alt="Rower Stuff App Screen {i+1}" class="rounded-md object-cover w-full h-full" /></Lightbox>
+        </Carousel.Item>
+      {/each}
+    </Carousel.Content>
+    <Carousel.Previous class="hidden" />
+    <Carousel.Next class="hidden" />
+  </Carousel.Root>
+</div>
+
+Replace your paper scoring cards with the new digital alternative. Track and review your shoots all directly from your device. Currently only supports English Sporting, with more sports and statistics coming soon. Easily share the shoots through email as a CSV. Easy to use, clean and modern design.
+
+## Development Cycle
+
+This app was conceptualised in 2020 but started development in 2021 as part of Computer Science GCE Advanced Level. The summer after completeing my A-Levels I continued to develop the app with a bit of a redesign and some further functionality. Version 1, which supported only "English Sporting Clays", was then released onto the google play store. Further development has continued to add further disciplines, along with a slight databse redesign, however this has not been released yet.
+
+## Languages & Tools Used
+
+- C#
+- Xamarin Android
+- SQL
+
+## Repository
+
+The project is open-source and can be found on GitHub [here](https://github.com/euandeas/club-clays).
