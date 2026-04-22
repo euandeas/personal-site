@@ -42,10 +42,10 @@
 
 	const badgeClass = (experience: string) =>
 		experience === '1'
-			? 'rounded-lg border-0 bg-linear-to-tl from-blue-400 to-blue-300 p-4 text-sm'
+			? 'rounded-lg border-0 bg-linear-to-tl from-blue-400 to-blue-300 p-4 text-base'
 			: experience === '2'
-				? 'rounded-lg border-0 bg-linear-to-tl from-blue-600 to-blue-400 p-4 text-sm'
-				: 'rounded-lg border-0 bg-linear-to-tl from-blue-800 to-blue-600 p-4 text-sm';
+				? 'rounded-lg border-0 bg-linear-to-tl from-blue-600 to-blue-400 p-4 text-base'
+				: 'rounded-lg border-0 bg-linear-to-tl from-blue-800 to-blue-600 p-4 text-base';
 
 	const handleWheel = (e: WheelEvent) => {
 		if (window.scrollY === 0 && e.deltaY > 0) {
@@ -106,7 +106,7 @@
 				</div>
 				<div class="flex-1 pl-4">
 					<h1 class="pb-6 text-3xl font-semibold">About Me</h1>
-					<p class="pb-4">
+					<p class="pb-4 text-lg">
 						Hey, I'm Euan! I'm a Software Engineer currently working as a full stack developer at
 						iplicit building cloud-based financial management solutions for mid-market
 						organisations. I've been passionate about software development from a young age,
@@ -143,7 +143,7 @@
 
 								<!-- Description -->
 								<div class="w-7/12 pb-4">
-									<p>{event.description}</p>
+									<p class="text-lg">{event.description}</p>
 								</div>
 							</div>
 						{/each}
@@ -165,14 +165,14 @@
 			<div class="flex w-full flex-col pb-8 md:flex-row">
 				<div class="flex-1 pr-4 pb-8 md:pb-0">
 					<h2 class="pb-6 text-2xl font-semibold">Sports</h2>
-					<p class="pb-4">
+					<p class="pb-4 text-lg">
 						Inspired by the 2012 London Olympics I have been rowing since I was young. During
 						university, I competed nationally at events like BUCS, HORR, and Henley Royal Regatta,
 						and served as President of the boat club in my final year. Since leaving university I
 						have continued to race and train with my local club. Rowing is a very demanding sport
 						and it has taught me a lot about discipline and pushing my limits.
 					</p>
-					<p class="pb-8">
+					<p class="pb-8 text-lg">
 						Rowing has also opened the door to a wider world of endurance sport. What started as
 						cross-training quickly became a genuine passion for road cycling, and following the
 						professional peloton has further fueled my interest in the sport. This has also given me

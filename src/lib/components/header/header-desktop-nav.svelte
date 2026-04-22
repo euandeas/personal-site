@@ -10,19 +10,19 @@
 	<a
 		href="/#about"
 		class="transition-all duration-700 hover:underline {isSticky
-			? 'ml-5'
-			: 'py-2 text-2xl md:ml-auto'}">About</a
+			? 'ml-5 text-lg'
+			: 'py-5 text-4xl md:ml-auto'}">About</a
 	>
 	<a
 		href="/#projects"
 		class="transition-all duration-700 hover:underline {isSticky
-			? 'ml-5'
-			: 'py-2 text-2xl md:ml-auto'}">Projects</a
+			? 'ml-5 text-lg'
+			: 'py-5 text-4xl md:ml-auto'}">Projects</a
 	>
 	<a
 		href="/#blog"
 		class="transition-all duration-700 hover:underline {isSticky
-			? 'ml-5'
-			: 'py-2 text-2xl md:ml-auto'}">Blog</a
+			? 'ml-5 text-lg'
+			: 'py-5 text-4xl md:ml-auto'}">Blog</a
 	>
 </div>
