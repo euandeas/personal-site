@@ -107,13 +107,14 @@
 				<div class="flex-1 pl-4">
 					<h1 class="pb-6 text-3xl font-semibold">About Me</h1>
 					<p class="pb-4">
-						Hey, I'm Euan! I'm a Software Engineer currently working at iplicit and a Computer
-						Science Msci graduate from the University of Nottingham. I've been passionate about
-						software development since 2016, starting out as a self-taught programmer and continuing
-						to deepen my knowledge through my studies. I particularly have interests in privacy and
-						enjoy tinkering with technology (particularly Linux!). Although my focus is primarily on
-						back-end development, I do have limited experience with front-end development through
-						creating websites, web apps and mobile apps.
+						Hey, I'm Euan! I'm a Software Engineer currently working as a full stack developer at
+						iplicit building cloud-based financial management solutions for mid-market
+						organisations. I've been passionate about software development from a young age,
+						starting out as a self-taught programmer before going on to earn an MSci in Computer
+						Science from the University of Nottingham. My focus is primarily on back-end
+						development, but I also have strong experience building websites, web apps, and mobile
+						apps. I also have a strong interest in privacy and enjoy tinkering with technologies
+						such as Linux and homelabbing.
 					</p>
 				</div>
 			</div>
@@ -165,18 +166,17 @@
 				<div class="flex-1 pr-4 pb-8 md:pb-0">
 					<h2 class="pb-6 text-2xl font-semibold">Sports</h2>
 					<p class="pb-4">
-						I have been rowing since 2014, starting as a junior at Reading Rowing Club. During my
-						time at university, I continued to row, and in my fourth and final year, I stepped into
-						the role of President of the boat club. I consistently competed nationally with the
-						university at events such as BUCS and HORR. I have also had the opportunity to attend
-						qualifiers for and race at Henley Royal Regatta.
+						Inspired by the 2012 London Olympics I have been rowing since I was young. During
+						university, I competed nationally at events like BUCS, HORR, and Henley Royal Regatta,
+						and served as President of the boat club in my final year. Since leaving university I
+						have continued to race and train with my local club. Rowing is a very demanding sport
+						and it has taught me a lot about discipline and pushing my limits.
 					</p>
 					<p class="pb-8">
-						While at university, I took up road cycling as part of cross-training for rowing.
-						Although I don't compete in cycling, I thoroughly enjoy the sport and make an effort to
-						ride whenever I can. Road cycling has introduced me to a broader world of endurance
-						sports, from following the professional peloton to developing an interest in Ironman
-						events. I have the ambition to complete an Ironman within the next couple of years.
+						Rowing has also opened the door to a wider world of endurance sport. What started as
+						cross-training quickly became a genuine passion for road cycling, and following the
+						professional peloton has further fueled my interest in the sport. This has also given me
+						an interest in aiming to complete an Ironman within the next couple of years.
 					</p>
 				</div>
 				<div class="flex pl-4">
