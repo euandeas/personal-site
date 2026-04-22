@@ -9,7 +9,7 @@
 	let checked = $state(false);
 </script>
 
-<HeaderControls {isSticky} {checked} />
+<HeaderControls {isSticky} bind:checked />
 
 <MobileNav {checked} />
 
