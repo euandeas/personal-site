@@ -1,13 +1,11 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
+
 	let { data } = $props();
 
 	import { Header } from '$lib/components/header';
 	import * as Card from '$lib/components/ui/card';
 	import { Badge } from '$lib/components/ui/badge';
-	import { onMount } from 'svelte';
-
-	let y: number = $state(0);
-	let isSticky = $state(false);
 
 	const events = [
 		{ id: 0, year: 'Feb 03', description: 'Born in the UK.' },
@@ -46,56 +44,14 @@
 			: experience === '2'
 				? 'rounded-lg border-0 bg-linear-to-tl from-blue-600 to-blue-400 p-4 text-base'
 				: 'rounded-lg border-0 bg-linear-to-tl from-blue-800 to-blue-600 p-4 text-base';
-
-	const handleWheel = (e: WheelEvent) => {
-		if (window.scrollY === 0 && e.deltaY > 0) {
-			const prevent = (ev: Event) => ev.preventDefault();
-			window.addEventListener('wheel', prevent, { passive: false });
-			window.addEventListener('touchmove', prevent, { passive: false });
-
-			e.preventDefault();
-			window.scrollTo({ top: 1, behavior: 'instant' });
-			isSticky = true;
-
-			setTimeout(() => {
-				window.removeEventListener('wheel', prevent);
-				window.removeEventListener('touchmove', prevent);
-			}, 700);
-		} else if (window.scrollY === 0) {
-			isSticky = false;
-		} else if (window.scrollY > 0) {
-			isSticky = true;
-		}
-	};
-
-	onMount(() => {
-		if (typeof window !== 'undefined') {
-			const touchNoop = () => {};
-			window.addEventListener('wheel', handleWheel, { passive: false });
-			window.addEventListener('touchmove', touchNoop, { passive: true });
-
-			return () => {
-				window.removeEventListener('wheel', handleWheel);
-				window.removeEventListener('touchmove', touchNoop);
-			};
-		}
-	});
-
-	$effect(() => {
-		if (!isSticky && y > 10) {
-			isSticky = true;
-		}
-	});
 </script>
-
-<svelte:window bind:scrollY={y} />
 
 <svelte:head>
 	<title>Euan Deas</title>
 </svelte:head>
 
 <div class="flex justify-center bg-background">
-	<Header {isSticky} />
+	<Header />
 
 	<div class="mx-10 w-full max-w-240 pt-24">
 		<div>
@@ -105,7 +61,7 @@
 					<img class="m-auto max-w-64 rounded object-cover" src="/assets/me.jpg" alt="Euan" />
 				</div>
 				<div class="flex-1 pl-4">
-					<h1 class="pb-6 text-3xl font-semibold">About Me</h1>
+					<h1 class="pb-6 text-2xl font-semibold">About Me</h1>
 					<p class="pb-4 text-lg">
 						Hey, I'm Euan! I'm a Software Engineer currently working as a full stack developer at
 						iplicit building cloud-based financial management solutions for mid-market
@@ -195,7 +151,7 @@
 			{/if}
 			<div class="flex flex-col md:flex-row">
 				{#each data.projects.slice(0, 3) as project (project.slug)}
-					<a href={'/projects/' + project.slug}>
+					<a href={resolve('/projects/[slug]', { slug: project.slug })}>
 						<Card.Root class="my-2 border py-0 shadow-lg hover:shadow-xl md:mx-2">
 							<Card.Content class="flex-1 p-0">
 								<img

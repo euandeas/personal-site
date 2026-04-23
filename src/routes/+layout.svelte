@@ -7,6 +7,6 @@
 </script>
 
 <svelte:head><link rel="icon" href="/assets/logo.png" /></svelte:head>
-<ModeWatcher />
+<ModeWatcher defaultMode="dark" />
 {@render children()}
 <Footer />

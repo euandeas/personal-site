@@ -1,42 +1,28 @@
 <script lang="ts">
-	import HeaderControls from './header-controls.svelte';
+	import { resolve } from '$app/paths';
 	import DesktopNav from './header-desktop-nav.svelte';
 	import MobileNav from './header-mobile-nav.svelte';
-	import Footer from './header-footer.svelte';
+	import HamburgerButton from './hamburger-button.svelte';
+	import ThemeSwitch from '$lib/components/theme-switch.svelte';
 
-	let { isSticky = false } = $props();
-
-	let checked = $state(false);
+	let menuOpen = $state(false);
 </script>
 
-<HeaderControls {isSticky} bind:checked />
+<MobileNav bind:checked={menuOpen} />
 
-<MobileNav {checked} />
-
-<div
-	class="fixed flex w-full flex-col items-center justify-center bg-background text-center transition-all duration-700
-{isSticky ? 'h-16' : 'h-screen'} z-30"
+<header
+	class="fixed inset-x-0 top-0 z-50 mx-auto flex h-16 w-full max-w-300 items-center justify-between bg-background px-10"
 >
-	<div
-		class="w-full transition-all duration-700 {isSticky
-			? 'max-w-full'
-			: 'max-w-350'} mx-10 flex min-h-full flex-col justify-center md:flex-row"
-	>
-		<div class="flex flex-1 items-center justify-start px-6 md:px-10 md:text-left">
-			<div class="flex-col">
-				<h1 class="font-bold transition-all duration-700 {isSticky ? 'text-2xl' : 'text-6xl'}">
-					<a href="/">Euan Deas</a>
-				</h1>
-				<h2
-					class="transition-all duration-700 {isSticky
-						? 'mt-0 text-[0rem] text-transparent'
-						: 'mt-2 text-2xl text-gray-600'}"
-				>
-					Student, Back-end Software Dev & Endurance Athlete
-				</h2>
-			</div>
+	<a href={resolve('/')} class="text-xl font-bold">Euan Deas</a>
+
+	<DesktopNav />
+
+	<div class="flex items-center gap-2">
+		<div class="hidden md:block">
+			<ThemeSwitch />
 		</div>
-		<DesktopNav {isSticky} />
+		<div class="md:hidden">
+			<HamburgerButton bind:checked={menuOpen} />
+		</div>
 	</div>
-	<Footer {isSticky} />
-</div>
+</header>

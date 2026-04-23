@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
+	import { NAV_ITEMS } from './header-nav-items';
 	import ThemeSwitch from '$lib/components/theme-switch.svelte';
 
 	let { checked = $bindable(false) } = $props();
@@ -9,39 +11,22 @@
 </script>
 
 <div
-	class="fixed top-0 z-40 w-full bg-background transition-all duration-700 md:hidden {checked
-		? 'h-full'
-		: 'h-0'}"
+	class="fixed inset-0 z-40 flex items-center justify-center bg-background transition-all duration-300 md:hidden
+		{checked ? 'opacity-100' : 'pointer-events-none opacity-0'}"
 >
-	<div
-		class="mb-0 flex h-full w-full flex-col items-center justify-center px-10 transition-all duration-700 {checked
-			? 'py-56 opacity-100'
-			: 'py-0 opacity-0'}"
-	>
-		<a
-			href="/#about"
-			class="flex-1 transition-all duration-500 hover:underline {checked
-				? 'text-2xl'
-				: 'pointer-events-none'}"
-			onclick={closeMenu}>About</a
-		>
-		<a
-			href="/#projects"
-			class="flex-1 transition-all duration-700 hover:underline {checked
-				? 'text-2xl'
-				: 'pointer-events-none'}"
-			onclick={closeMenu}>Projects</a
-		>
-		<a
-			href="/#blog"
-			class="flex-1 transition-all duration-700 hover:underline {checked
-				? 'text-2xl'
-				: 'pointer-events-none'}"
-			onclick={closeMenu}>Blog</a
-		>
+	<nav class="flex flex-col items-center gap-14">
+		{#each NAV_ITEMS as item (item.label)}
+			<a
+				href={resolve(item.href)}
+				class="text-3xl transition-colors hover:text-muted-foreground"
+				onclick={closeMenu}
+			>
+				{item.label}
+			</a>
+		{/each}
 
-		<div class="flex-1 transition-all duration-500 {checked ? '' : 'pointer-events-none'}">
+		<div class="mt-8 scale-125">
 			<ThemeSwitch />
 		</div>
-	</div>
+	</nav>
 </div>
