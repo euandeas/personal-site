@@ -144,6 +144,7 @@
 		</div>
 		<div class="flex w-full flex-col gap-8 py-8 md:flex-row">
 			<div class="flex-1">
+				<span id="projects" class="absolute -translate-y-16"></span>
 				<h2 class="pb-4 text-2xl font-semibold">Projects</h2>
 				<PostList
 					items={data.projects}
@@ -153,6 +154,7 @@
 				/>
 			</div>
 			<div class="flex-1">
+				<span id="blog" class="absolute -translate-y-16"></span>
 				<h2 class="pb-4 text-2xl font-semibold">Blog</h2>
 				<PostList
 					items={data.posts}
