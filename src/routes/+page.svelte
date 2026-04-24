@@ -75,7 +75,7 @@
 
 			<div class="flex w-full flex-col border-b border-border py-8 md:flex-row">
 				<div class="flex-1 pr-4">
-					<h2 class="pb-6 text-2xl font-semibold">Biography</h2>
+					<h1 class="pb-6 text-2xl font-semibold">Biography</h1>
 					<div class="relative flex flex-col pb-8 md:pb-0">
 						{#each events as event, i (event.id)}
 							<div class="relative flex items-stretch">
@@ -104,10 +104,10 @@
 					</div>
 				</div>
 				<div class="flex-1 pl-4">
-					<h2 class="text-2xl font-semibold">Technologies & Languages Experience</h2>
-					<h2 class="pb-6 text-sm text-gray-700">
+					<h1 class="text-2xl font-semibold">Technologies & Languages Experience</h1>
+					<p class="pb-6 text-sm text-gray-700">
 						The more intense the blue, the higher the level of experience.
-					</h2>
+					</p>
 					<div class="flex w-full flex-wrap gap-3">
 						{#each technologies as tech (tech.id)}
 							<Badge class={badgeClass(tech.experience)}>{tech.name}</Badge>
@@ -118,7 +118,7 @@
 
 			<div class="flex w-full flex-col border-b border-border py-8 md:flex-row">
 				<div class="flex-1 pr-4 pb-8 md:pb-0">
-					<h2 class="pb-6 text-2xl font-semibold">Sports</h2>
+					<h1 class="pb-6 text-2xl font-semibold">Sports</h1>
 					<p class="pb-4 text-lg">
 						Inspired by the 2012 London Olympics I have been rowing since I was young. During
 						university, I competed nationally at events like BUCS, HORR, and Henley Royal Regatta,
@@ -145,7 +145,7 @@
 		<div class="flex w-full flex-col gap-8 py-8 md:flex-row">
 			<div class="flex-1">
 				<span id="projects" class="absolute -translate-y-16"></span>
-				<h2 class="pb-4 text-2xl font-semibold">Projects</h2>
+				<h1 class="pb-4 text-2xl font-semibold">Projects</h1>
 				<PostList
 					items={data.projects}
 					basePath="/projects"
@@ -155,7 +155,7 @@
 			</div>
 			<div class="flex-1">
 				<span id="blog" class="absolute -translate-y-16"></span>
-				<h2 class="pb-4 text-2xl font-semibold">Blog</h2>
+				<h1 class="pb-4 text-2xl font-semibold">Blog</h1>
 				<PostList
 					items={data.posts}
 					basePath="/blog"
