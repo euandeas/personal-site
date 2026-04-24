@@ -10,7 +10,7 @@
 <div class="flex justify-center bg-background">
 	<Header />
 
-	<div class="mx-10 w-full max-w-240 pt-24">
+	<div class="mx-10 w-full max-w-240 pt-24 pb-8">
 		<h1 class="pb-2 text-3xl font-semibold">Privacy Policy</h1>
 		<p class="pb-6 text-sm text-muted-foreground">Last updated: June 2025</p>
 
