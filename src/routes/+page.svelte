@@ -1,11 +1,9 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
-
 	let { data } = $props();
 
 	import { Header } from '$lib/components/header';
-	import * as Card from '$lib/components/ui/card';
 	import { Badge } from '$lib/components/ui/badge';
+	import { PostList } from '$lib/components/post-list';
 
 	const events = [
 		{ id: 0, year: 'Feb 03', description: 'Born in the UK.' },
@@ -56,7 +54,7 @@
 	<div class="mx-10 w-full max-w-240 pt-24">
 		<div>
 			<span id="about" class="absolute -translate-y-16"></span>
-			<div class="flex w-full flex-col pb-8 md:flex-row">
+			<div class="flex w-full flex-col border-b border-border pb-8 md:flex-row">
 				<div class="flex pr-4 pb-8 md:pb-0">
 					<img class="m-auto max-w-64 rounded object-cover" src="/assets/me.jpg" alt="Euan" />
 				</div>
@@ -75,7 +73,7 @@
 				</div>
 			</div>
 
-			<div class="flex w-full flex-col pb-8 md:flex-row">
+			<div class="flex w-full flex-col border-b border-border py-8 md:flex-row">
 				<div class="flex-1 pr-4">
 					<h2 class="pb-6 text-2xl font-semibold">Biography</h2>
 					<div class="relative flex flex-col pb-8 md:pb-0">
@@ -118,7 +116,7 @@
 				</div>
 			</div>
 
-			<div class="flex w-full flex-col pb-8 md:flex-row">
+			<div class="flex w-full flex-col border-b border-border py-8 md:flex-row">
 				<div class="flex-1 pr-4 pb-8 md:pb-0">
 					<h2 class="pb-6 text-2xl font-semibold">Sports</h2>
 					<p class="pb-4 text-lg">
@@ -144,33 +142,25 @@
 				</div>
 			</div>
 		</div>
-		<div id="projects" class="pb-8">
-			<h2 class="pb-6 text-2xl font-semibold">Projects</h2>
-			{#if data.projects.length === 0}
-				<h2 class="pb-6 text-center text-xl">Projects Coming Soon...</h2>
-			{/if}
-			<div class="flex flex-col md:flex-row">
-				{#each data.projects.slice(0, 3) as project (project.slug)}
-					<a href={resolve('/projects/[slug]', { slug: project.slug })}>
-						<Card.Root class="my-2 border py-0 shadow-lg hover:shadow-xl md:mx-2">
-							<Card.Content class="flex-1 p-0">
-								<img
-									class="max-h-56 w-full rounded-t-lg object-cover pb-2"
-									src={'/assets/projects/' + project.slug + '/thumbnail.jpg'}
-									alt="thumbnail"
-								/>
-								<p class="pb-2 pl-2 text-xl font-semibold">{project.title}</p>
-							</Card.Content>
-						</Card.Root>
-					</a>
-				{/each}
+		<div class="flex w-full flex-col gap-8 py-8 md:flex-row">
+			<div class="flex-1">
+				<h2 class="pb-4 text-2xl font-semibold">Projects</h2>
+				<PostList
+					items={data.projects}
+					basePath="/projects"
+					maxItems={5}
+					moreLink={{ href: '/projects', text: 'See all projects' }}
+				/>
 			</div>
-		</div>
-		<div id="blog">
-			<h2 class="pb-6 text-2xl font-semibold">Blog</h2>
-			{#if data.posts.length === 0}
-				<h2 class="pb-6 text-center text-xl">Posts Coming Soon...</h2>
-			{/if}
+			<div class="flex-1">
+				<h2 class="pb-4 text-2xl font-semibold">Blog</h2>
+				<PostList
+					items={data.posts}
+					basePath="/blog"
+					maxItems={5}
+					moreLink={{ href: '/blog', text: 'See all posts' }}
+				/>
+			</div>
 		</div>
 	</div>
 </div>

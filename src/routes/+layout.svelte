@@ -8,5 +8,9 @@
 
 <svelte:head><link rel="icon" href="/assets/logo.png" /></svelte:head>
 <ModeWatcher defaultMode="dark" />
-{@render children()}
-<Footer />
+<div class="flex min-h-screen flex-col">
+	<div class="flex-1">
+		{@render children()}
+	</div>
+	<Footer />
+</div>
